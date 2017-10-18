@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"C:\wamp64\www\bick\public/../application/admin\view\admin\list.htm";i:1508069065;s:66:"C:\wamp64\www\bick\public/../application/admin\view\common\top.htm";i:1507953365;s:67:"C:\wamp64\www\bick\public/../application/admin\view\common\left.htm";i:1507957487;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"C:\wamp64\www\bick\public/../application/admin\view\admin\list.htm";i:1508338563;s:66:"C:\wamp64\www\bick\public/../application/admin\view\public\top.htm";i:1507953365;s:67:"C:\wamp64\www\bick\public/../application/admin\view\public\left.htm";i:1508073496;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">
@@ -112,7 +112,7 @@
             </a>
             <ul class="submenu">
                 <li>
-                    <a href="/admin/document/index.html">
+                    <a href="<?php echo url('lst'); ?>">
                                     <span class="menu-text">
                                         管理列表                                    </span>
                         <i class="menu-expand"></i>
@@ -169,7 +169,7 @@
                                         <li>
                         <a href="#">系统</a>
                     </li>
-                                        <li class="active">用户管理</li>
+                                        <li class="active">管理员管理</li>
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -177,7 +177,7 @@
                 <!-- Page Body -->
                 <div class="page-body">
                     
-<button type="button" tooltip="添加用户" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '/admin/user/add.html'"> <i class="fa fa-plus"></i> Add
+<button type="button" tooltip="添加管理员" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '<?php echo url('add'); ?>'"> <i class="fa fa-plus"></i> Add
 </button>
 <div class="row">
     <div class="col-lg-12 col-sm-12 col-xs-12">
@@ -187,50 +187,31 @@
                     <table class="table table-bordered table-hover">
                         <thead class="">
                             <tr>
-                                <th class="text-center">ID</th>
-                                <th class="text-center">用户名称</th>
-                                <th class="text-center">操作</th>
+                                <th class="text-center" style="width: 20%">ID</th>
+                                <th class="text-center">管理员名称</th>
+                                <th class="text-center" style="width: 30%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
+                                <?php if(is_array($adminres) || $adminres instanceof \think\Collection || $adminres instanceof \think\Paginator): $i = 0; $__LIST__ = $adminres;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                                                         <tr>
-                                <td align="center">6</td>
-                                <td align="center">test</td>
+                                <td align="center"><?php echo $vo['id']; ?></td>
+                                <td align="center"><?php echo $vo['name']; ?></td>
                                 <td align="center">
-                                    <a href="/admin/user/edit/id/6.html" class="btn btn-primary btn-sm shiny">
+                                    <a href="<?php echo url('edit', array('id' => $vo['id'])); ?>" class="btn btn-primary btn-sm shiny">
                                         <i class="fa fa-edit"></i> 编辑
                                     </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')" class="btn btn-danger btn-sm shiny">
+                                    <a href="#" onClick="warning('确实要删除吗', '<?php echo url('del', array('id' => $vo['id'])); ?>')" class="btn btn-danger btn-sm shiny">
                                         <i class="fa fa-trash-o"></i> 删除
                                     </a>
                                 </td>
                             </tr>
-                                                        <tr>
-                                <td align="center">7</td>
-                                <td align="center">aaaaaa</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/7.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/7.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td align="center">8</td>
-                                <td align="center">bbb</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/8.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/8.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
                                                     </tbody>
                     </table>
+                </div>
+                <div style="padding-top: 10px; ">
+                <?php echo $adminres->render(); ?>
                 </div>
                 <div>
                 	                </div>
