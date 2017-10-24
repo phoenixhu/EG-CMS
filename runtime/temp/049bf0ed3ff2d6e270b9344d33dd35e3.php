@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"C:\wamp64\www\bick\public/../application/admin\view\admin\list.htm";i:1508338563;s:66:"C:\wamp64\www\bick\public/../application/admin\view\public\top.htm";i:1507953365;s:67:"C:\wamp64\www\bick\public/../application/admin\view\public\left.htm";i:1508073496;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"C:\wamp64\www\bick\public/../application/admin\view\admin\list.htm";i:1508339351;s:66:"C:\wamp64\www\bick\public/../application/admin\view\public\top.htm";i:1508339351;s:67:"C:\wamp64\www\bick\public/../application/admin\view\public\left.htm";i:1508339351;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">

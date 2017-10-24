@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"C:\wamp64\www\bick\public/../application/admin\view\admin\add.htm";i:1508074068;s:66:"C:\wamp64\www\bick\public/../application/admin\view\public\top.htm";i:1507953365;s:67:"C:\wamp64\www\bick\public/../application/admin\view\public\left.htm";i:1508073496;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"C:\wamp64\www\bick\public/../application/admin\view\admin\add.htm";i:1508422051;s:66:"C:\wamp64\www\bick\public/../application/admin\view\public\top.htm";i:1508339351;s:67:"C:\wamp64\www\bick\public/../application/admin\view\public\left.htm";i:1508339351;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">
@@ -192,7 +192,7 @@
                         <div class="form-group">
                             <label for="username" class="col-sm-2 control-label no-padding-right">管理员名称</label>
                             <div class="col-sm-6">
-                                <input class="form-control" placeholder="" name="name" required="" type="text">
+                                <input class="form-control" placeholder="" name="name" type="text">
                             </div>
                             <p class="help-block col-sm-4 red">* 必填</p>
                         </div>
@@ -200,7 +200,7 @@
                         <div class="form-group">
                             <label for="group_id" class="col-sm-2 control-label no-padding-right">管理员密码</label>
                             <div class="col-sm-6">
-                                <input class="form-control" placeholder="" name="password" required="" type="password">
+                                <input class="form-control" placeholder="" name="password" type="password">
                             </div>
                         </div>  
                         <div class="form-group">
